@@ -1,0 +1,475 @@
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local Main = Instance.new("ScreenGui")
+local code1 = Instance.new("Frame")
+local UICorner = Instance.new("UICorner")
+local GAME = Instance.new("TextLabel")
+local UICorner_2 = Instance.new("UICorner")
+local SPEEDOFF = Instance.new("TextButton")
+local SPEEDON = Instance.new("TextButton")
+local JUMPOFF = Instance.new("TextButton")
+local JUMPON = Instance.new("TextButton")
+local code2 = Instance.new("Frame")
+local UICorner_3 = Instance.new("UICorner")
+local NOCLIP = Instance.new("TextButton")
+local PISTOL = Instance.new("TextButton")
+local AR = Instance.new("TextButton")
+local SHOTGUN = Instance.new("TextButton")
+local code3 = Instance.new("Frame")
+local UICorner_4 = Instance.new("UICorner")
+local NETRUAL = Instance.new("TextButton")
+local COP = Instance.new("TextButton")
+local PRISONER = Instance.new("TextButton")
+local CLOSE = Instance.new("TextButton")
+local UICorner_5 = Instance.new("UICorner")
+local OPEN = Instance.new("TextButton")
+local UICorner_6 = Instance.new("UICorner")
+local code4 = Instance.new("Frame")
+local UICorner = Instance.new("UICorner")
+local AR2 = Instance.new("TextButton")
+local SHOTGUN2 = Instance.new("TextButton")
+local PISTOL2 = Instance.new("TextButton")
+
+--Properties:
+
+Main.Name = "Main"
+Main.Parent = game.CoreGui
+Main.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+code1.Name = "code1"
+code1.Parent = Main
+code1.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+code1.BackgroundTransparency = 0.650
+code1.Position = UDim2.new(0.0207920801, 0, 0.0369393155, 0)
+code1.Size = UDim2.new(0, 255, 0, 160)
+code1.Visible = false
+
+UICorner.Parent = code1
+
+GAME.Name = "GAME"
+GAME.Parent = code1
+GAME.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+GAME.BackgroundTransparency = 1.000
+GAME.Size = UDim2.new(0, 255, 0, 44)
+GAME.Font = Enum.Font.SourceSans
+GAME.Text = "Prison Life GUI#  v1.0.2.5"
+GAME.TextColor3 = Color3.fromRGB(0, 0, 0)
+GAME.TextSize = 14.000
+
+UICorner_2.Parent = GAME
+
+SPEEDOFF.Name = "SPEEDOFF"
+SPEEDOFF.Parent = code1
+SPEEDOFF.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+SPEEDOFF.BackgroundTransparency = 1.000
+SPEEDOFF.Position = UDim2.new(0, 0, 0.152777776, 0)
+SPEEDOFF.Size = UDim2.new(0, 255, 0, 50)
+SPEEDOFF.Font = Enum.Font.SourceSans
+SPEEDOFF.Text = "SPEED: OFF"
+SPEEDOFF.TextColor3 = Color3.fromRGB(255, 0, 0)
+SPEEDOFF.TextScaled = true
+SPEEDOFF.TextSize = 14.000
+SPEEDOFF.TextWrapped = true
+SPEEDOFF.MouseButton1Down:Connect(function()
+	SPEEDOFF.Visible = false
+	SPEEDON.Visible = true
+	game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 100
+end)
+
+SPEEDON.Name = "SPEEDON"
+SPEEDON.Parent = code1
+SPEEDON.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+SPEEDON.BackgroundTransparency = 1.000
+SPEEDON.Position = UDim2.new(0, 0, 0.152777776, 0)
+SPEEDON.Size = UDim2.new(0, 255, 0, 50)
+SPEEDON.Visible = false
+SPEEDON.Font = Enum.Font.SourceSans
+SPEEDON.Text = "SPEED: ON"
+SPEEDON.TextColor3 = Color3.fromRGB(85, 255, 0)
+SPEEDON.TextScaled = true
+SPEEDON.TextSize = 14.000
+SPEEDON.TextWrapped = true
+SPEEDON.MouseButton1Down:Connect(function()
+	SPEEDON.Visible = false
+	SPEEDOFF.Visible = true
+	game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
+end)
+
+JUMPOFF.Name = "JUMPOFF"
+JUMPOFF.Parent = code1
+JUMPOFF.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+JUMPOFF.BackgroundTransparency = 1.000
+JUMPOFF.Position = UDim2.new(0, 0, 0.490772456, 0)
+JUMPOFF.Size = UDim2.new(0, 255, 0, 50)
+JUMPOFF.Font = Enum.Font.SourceSans
+JUMPOFF.Text = "JUMP: OFF"
+JUMPOFF.TextColor3 = Color3.fromRGB(255, 0, 0)
+JUMPOFF.TextScaled = true
+JUMPOFF.TextSize = 14.000
+JUMPOFF.TextWrapped = true
+JUMPOFF.MouseButton1Down:Connect(function()
+	JUMPOFF.Visible = false
+	JUMPON.Visible = true
+	game.Players.LocalPlayer.Character.Humanoid.JumpPower = 150
+end)
+
+JUMPON.Name = "JUMPON"
+JUMPON.Parent = code1
+JUMPON.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+JUMPON.BackgroundTransparency = 1.000
+JUMPON.Position = UDim2.new(0, 0, 0.490772456, 0)
+JUMPON.Size = UDim2.new(0, 255, 0, 50)
+JUMPON.Visible = false
+JUMPON.Font = Enum.Font.SourceSans
+JUMPON.Text = "JUMP: ON"
+JUMPON.TextColor3 = Color3.fromRGB(85, 255, 0)
+JUMPON.TextScaled = true
+JUMPON.TextSize = 14.000
+JUMPON.TextWrapped = true
+JUMPON.MouseButton1Down:Connect(function()
+	JUMPON.Visible = false
+	JUMPOFF.Visible = true
+	game.Players.LocalPlayer.Character.Humanoid.JumpPower = 50
+end)
+
+code2.Name = "code2"
+code2.Parent = Main
+code2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+code2.BackgroundTransparency = 0.650
+code2.Position = UDim2.new(0.0376237631, 0, 0.60817945, 0)
+code2.Size = UDim2.new(0, 217, 0, 254)
+code2.Visible = false
+
+UICorner_3.Parent = code2
+
+NOCLIP.Name = "NOCLIP"
+NOCLIP.Parent = code2
+NOCLIP.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+NOCLIP.BackgroundTransparency = 1.000
+NOCLIP.Size = UDim2.new(0, 217, 0, 50)
+NOCLIP.Font = Enum.Font.SourceSans
+NOCLIP.Text = "NOCLIP"
+NOCLIP.TextColor3 = Color3.fromRGB(0, 0, 255)
+NOCLIP.TextScaled = true
+NOCLIP.TextSize = 14.000
+NOCLIP.TextWrapped = true
+NOCLIP.MouseButton1Down:Connect(function()
+	noclip = false
+	game:GetService('RunService').Stepped:connect(function()
+		if noclip then
+			game.Players.LocalPlayer.Character.Humanoid:ChangeState(11)
+		end
+	end)
+	plr = game.Players.LocalPlayer
+	mouse = plr:GetMouse()
+	mouse.KeyDown:connect(function(key)
+
+		if key == "e" then
+			noclip = not noclip
+			game.Players.LocalPlayer.Character.Humanoid:ChangeState(11)
+		end
+	end)
+	print('Loaded')
+	print('Press "E" to noclip')
+end)
+
+PISTOL.Name = "PISTOL"
+PISTOL.Parent = code2
+PISTOL.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+PISTOL.BackgroundTransparency = 1.000
+PISTOL.Position = UDim2.new(0, 0, 0.196189523, 0)
+PISTOL.Size = UDim2.new(0, 217, 0, 50)
+PISTOL.Font = Enum.Font.SourceSans
+PISTOL.Text = "MOD M9"
+PISTOL.TextColor3 = Color3.fromRGB(0, 0, 255)
+PISTOL.TextScaled = true
+PISTOL.TextSize = 14.000
+PISTOL.TextWrapped = true
+PISTOL.MouseButton1Down:Connect(function()
+	local gun = game.Players.LocalPlayer.Backpack.M9.GunStates
+	local a = require(gun)
+
+	a.Damage = math.huge
+	a.MaxAmmo = math.huge
+	a.CurrentAmmo = math.huge
+	a.StoredAmmo = math.huge
+	a.FireRate = 0.00000000000000000000000000000000000001
+	a.AutoFire = true
+	a.Range = math.huge
+	a.Spread = 0
+	a.Bullets = 20
+end)
+
+AR.Name = "AR"
+AR.Parent = code2
+AR.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+AR.BackgroundTransparency = 1.000
+AR.Position = UDim2.new(0, 0, 0.391413391, 0)
+AR.Size = UDim2.new(0, 217, 0, 50)
+AR.Font = Enum.Font.SourceSans
+AR.Text = "MOD AK - 47"
+AR.TextColor3 = Color3.fromRGB(0, 0, 255)
+AR.TextScaled = true
+AR.TextSize = 14.000
+AR.TextWrapped = true
+AR.MouseButton1Down:Connect(function()
+	local gun = game.Players.LocalPlayer.Backpack:WaitForChild("AK-47").GunStates
+	local a = require(gun)
+
+	a.Damage = math.huge
+	a.MaxAmmo = math.huge
+	a.CurrentAmmo = math.huge
+	a.StoredAmmo = math.huge
+	a.FireRate = 0.00000000000000000000000000000000000001
+	a.Range = math.huge
+	a.Spread = 0
+	a.Bullets = 20
+end)
+
+SHOTGUN.Name = "SHOTGUN"
+SHOTGUN.Parent = code2
+SHOTGUN.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+SHOTGUN.BackgroundTransparency = 1.000
+SHOTGUN.Position = UDim2.new(0, 0, 0.586857975, 0)
+SHOTGUN.Size = UDim2.new(0, 217, 0, 50)
+SHOTGUN.Font = Enum.Font.SourceSans
+SHOTGUN.Text = "MOD REMINGTON 870"
+SHOTGUN.TextColor3 = Color3.fromRGB(0, 0, 255)
+SHOTGUN.TextScaled = true
+SHOTGUN.TextSize = 14.000
+SHOTGUN.TextWrapped = true
+SHOTGUN.MouseButton1Down:Connect(function()
+	local gun2 = game.Players.LocalPlayer.Backpack:WaitForChild("Remington 870").GunStates
+	local a = require(gun2)
+
+	a.Damage = math.huge
+	a.MaxAmmo = math.huge
+	a.CurrentAmmo = math.huge
+	a.StoredAmmo = math.huge
+	a.FireRate = 0.00000000000000000000000000000000000001
+	a.AutoFire = true
+	a.Range = math.huge
+	a.Spread = 0
+	a.Bullets = 20
+end)
+
+code3.Name = "code3"
+code3.Parent = Main
+code3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+code3.BackgroundTransparency = 0.650
+code3.Position = UDim2.new(0.0178217813, 0, 0.269129276, 0)
+code3.Size = UDim2.new(0, 258, 0, 231)
+code3.Visible = false
+
+UICorner_4.Parent = code3
+
+NETRUAL.Name = "NETRUAL"
+NETRUAL.Parent = code3
+NETRUAL.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+NETRUAL.BackgroundTransparency = 1.000
+NETRUAL.Size = UDim2.new(0, 258, 0, 50)
+NETRUAL.Font = Enum.Font.SourceSans
+NETRUAL.Text = "Netrual"
+NETRUAL.TextColor3 = Color3.fromRGB(85, 85, 85)
+NETRUAL.TextScaled = true
+NETRUAL.TextSize = 14.000
+NETRUAL.TextWrapped = true
+NETRUAL.MouseButton1Down:Connect(function()
+	Workspace.Remote.TeamEvent:FireServer("Medium stone grey")
+end)
+
+COP.Name = "COP"
+COP.Parent = code3
+COP.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+COP.BackgroundTransparency = 1.000
+COP.Position = UDim2.new(0, 0, 0.214521676, 0)
+COP.Size = UDim2.new(0, 258, 0, 50)
+COP.Font = Enum.Font.SourceSans
+COP.Text = "Cop"
+COP.TextColor3 = Color3.fromRGB(0, 0, 255)
+COP.TextScaled = true
+COP.TextSize = 14.000
+COP.TextWrapped = true
+COP.MouseButton1Down:Connect(function()
+	Workspace.Remote.TeamEvent:FireServer("Bright blue")
+end)
+
+PRISONER.Name = "PRISONER"
+PRISONER.Parent = code3
+PRISONER.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+PRISONER.BackgroundTransparency = 1.000
+PRISONER.Position = UDim2.new(0.00387596898, 0, 0.427483261, 0)
+PRISONER.Size = UDim2.new(0, 258, 0, 50)
+PRISONER.Font = Enum.Font.SourceSans
+PRISONER.Text = "Prisoner"
+PRISONER.TextColor3 = Color3.fromRGB(255, 85, 0)
+PRISONER.TextScaled = true
+PRISONER.TextSize = 14.000
+PRISONER.TextWrapped = true
+PRISONER.MouseButton1Down:Connect(function()
+	Workspace.Remote.TeamEvent:FireServer("Bright orange")
+end)
+
+CLOSE.Name = "CLOSE"
+CLOSE.Parent = Main
+CLOSE.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+CLOSE.Position = UDim2.new(0.29207921, 0, 0.0369393155, 0)
+CLOSE.Size = UDim2.new(0, 92, 0, 50)
+CLOSE.Visible = false
+CLOSE.Font = Enum.Font.SourceSans
+CLOSE.Text = "X"
+CLOSE.TextColor3 = Color3.fromRGB(255, 255, 255)
+CLOSE.TextScaled = true
+CLOSE.TextSize = 14.000
+CLOSE.TextWrapped = true
+CLOSE.MouseButton1Down:Connect(function()
+	code1.Visible = false
+	code2.Visible = false
+	code3.Visible = false
+	code4.Visible = false
+	OPEN.Visible = true
+	CLOSE.Visible = false
+end)
+
+UICorner_5.Parent = CLOSE
+
+OPEN.Name = "OPEN"
+OPEN.Parent = Main
+OPEN.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+OPEN.Position = UDim2.new(0.0118811885, 0, 0.420844316, 0)
+OPEN.Size = UDim2.new(0, 200, 0, 50)
+OPEN.Font = Enum.Font.SourceSans
+OPEN.Text = "OPEN"
+OPEN.TextColor3 = Color3.fromRGB(0, 0, 0)
+OPEN.TextScaled = true
+OPEN.TextSize = 14.000
+OPEN.TextWrapped = true
+OPEN.MouseButton1Down:Connect(function()
+	code1.Visible = true
+	code2.Visible = true
+	code3.Visible = true
+	code4.Visible = true
+	OPEN.Visible = false
+	CLOSE.Visible = true
+end)
+
+UICorner_6.Parent = OPEN
+
+code4.Name = "code4"
+code4.Parent = Main
+code4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+code4.BackgroundTransparency = 0.650
+code4.Position = UDim2.new(0.321782231, 0, 0.0171504058, 0)
+code4.Size = UDim2.new(0, 262, 0, 267)
+code4.Visible = false
+
+UICorner.Parent = code4
+
+AR2.Name = "AR2"
+AR2.Parent = code4
+AR2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+AR2.BackgroundTransparency = 1.000
+AR2.Size = UDim2.new(0, 262, 0, 50)
+AR2.Font = Enum.Font.SourceSans
+AR2.Text = "AK - 47"
+AR2.TextColor3 = Color3.fromRGB(0, 0, 255)
+AR2.TextScaled = true
+AR2.TextSize = 14.000
+AR2.TextWrapped = true
+AR2.MouseButton1Down:Connect(function()
+	local Weapon = {"AK-47"}
+	for i,v in pairs(workspace.Prison_ITEMS.giver:GetChildren()) do
+		if v.Name == Weapon[1] then
+			local lol = workspace.Remote.ItemHandler:InvokeServer(v.ITEMPICKUP)
+		end
+	end
+end)
+
+SHOTGUN2.Name = "SHOTGUN2"
+SHOTGUN2.Parent = code4
+SHOTGUN2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+SHOTGUN2.BackgroundTransparency = 1.000
+SHOTGUN2.Position = UDim2.new(0, 0, 0.374531835, 0)
+SHOTGUN2.Size = UDim2.new(0, 262, 0, 50)
+SHOTGUN2.Font = Enum.Font.SourceSans
+SHOTGUN2.Text = "Remington 870"
+SHOTGUN2.TextColor3 = Color3.fromRGB(0, 0, 255)
+SHOTGUN2.TextScaled = true
+SHOTGUN2.TextSize = 14.000
+SHOTGUN2.TextWrapped = true
+SHOTGUN2.MouseButton1Down:Connect(function()
+	local Weapon = {"Remington 870"}
+	for i,v in pairs(workspace.Prison_ITEMS.giver:GetChildren()) do
+		if v.Name == Weapon[1] then
+			local lol = workspace.Remote.ItemHandler:InvokeServer(v.ITEMPICKUP)
+		end
+	end
+end)
+
+PISTOL2.Name = "PISTOL2"
+PISTOL2.Parent = code4
+PISTOL2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+PISTOL2.BackgroundTransparency = 1.000
+PISTOL2.Position = UDim2.new(0, 0, 0.187265903, 0)
+PISTOL2.Size = UDim2.new(0, 262, 0, 50)
+PISTOL2.Font = Enum.Font.SourceSans
+PISTOL2.Text = "M9"
+PISTOL2.TextColor3 = Color3.fromRGB(0, 0, 255)
+PISTOL2.TextScaled = true
+PISTOL2.TextSize = 14.000
+PISTOL2.TextWrapped = true
+PISTOL2.MouseButton1Down:Connect(function()
+	local Weapon = {"M9"}
+	for i,v in pairs(workspace.Prison_ITEMS.giver:GetChildren()) do
+		if v.Name == Weapon[1] then
+			local lol = workspace.Remote.ItemHandler:InvokeServer(v.ITEMPICKUP)
+		end
+	end
+end)
+
+-- Scripts:
+
+local function SXANHHH_fake_script() -- GAME.CHANGE TEXT 
+	local script = Instance.new('LocalScript', GAME)
+
+	while wait() do
+		script.Parent.Text = "Made By okaydudechill23"
+		wait(4)
+		script.Parent.Text = "Prison Life GUI#  v1.0.2.5"
+		wait(4)
+	end
+end
+coroutine.wrap(SXANHHH_fake_script)()
+local function YDVNIN_fake_script() -- Main.DRAGGABLE SCRIPT 
+	local script = Instance.new('LocalScript', Main)
+
+	-- Bye Xx_Ed
+	
+	frame = script.Parent.code1 --Name of your frame
+	frame.Draggable = true
+	frame.Active = true
+	frame.Selectable = true
+	
+	-- Bye Xx_Ed
+	
+	frame = script.Parent.code2 --Name of your frame
+	frame.Draggable = true
+	frame.Active = true
+	frame.Selectable = true
+	
+	-- Bye Xx_Ed
+	
+	frame = script.Parent.code3 --Name of your frame
+	frame.Draggable = true
+	frame.Active = true
+	frame.Selectable = true
+	
+	frame = script.Parent.code4
+	frame.Draggable = true
+	frame.Active = true
+	frame.Selectable = true
+end
+coroutine.wrap(YDVNIN_fake_script)()
